@@ -1,39 +1,32 @@
-let currentQuestion = 1;
+function checkAnswer(questionNumber, correctAnswer) {
+    const currentQuestion = document.getElementById(`question${questionNumber}`);
+    const buttons = currentQuestion.querySelectorAll('button');
 
-function checkAnswer(questionNumber, answer) {
-    const correctAnswers = {
-        1: 'a',
-        2: 'c',
-        3: 'a'
-    };
-
-    let buttons = document.querySelectorAll(`#question${questionNumber} button`);
     buttons.forEach(button => {
-        button.classList.remove('shake', 'highlight');
+        button.onclick = () => {
+            if (button.textContent.trim().startsWith(correctAnswer)) {
+                currentQuestion.classList.add('slide-out');
+                setTimeout(() => {
+                    currentQuestion.style.display = 'none';
+                    if (questionNumber < 3) {
+                        const nextQuestion = document.getElementById(`question${questionNumber + 1}`);
+                        nextQuestion.style.display = 'block';
+                        nextQuestion.classList.add('slide-in');
+                    } else {
+                        const message = document.getElementById('message');
+                        message.style.display = 'block';
+                        message.classList.add('slide-in');
+                    }
+                }, 500); // Thời gian trễ cho hiệu ứng trượt
+            } else {
+                alert("Đáp án không chính xác. Vui lòng thử lại!");
+            }
+        };
     });
-
-    if (answer === correctAnswers[questionNumber]) {
-        alert('Đúng rồi!');
-        if (questionNumber < 3) {
-            document.getElementById('question' + questionNumber).classList.add('slide-out');
-            setTimeout(function() {
-                document.getElementById('question' + questionNumber).style.display = 'none';
-                currentQuestion++;
-                document.getElementById('question' + currentQuestion).style.display = 'block';
-                document.getElementById('question' + currentQuestion).classList.add('slide-in');
-            }, 1000);
-        } else {
-            document.getElementById('question3').classList.add('slide-out');
-            setTimeout(function() {
-                document.getElementById('question3').style.display = 'none';
-                document.getElementById('message').style.display = 'block';
-                document.getElementById('message').classList.add('slide-in');
-                document.getElementById('image').style.display = 'block';
-            }, 1000);
-        }
-    } else {
-        document.querySelector(`#question${questionNumber} button[onclick*="${answer}"]`).classList.add('shake');
-    }
 }
 
-document.getElementById('question1').style.display = 'block';
+document.addEventListener('DOMContentLoaded', function() {
+    checkAnswer(1, 'C');  // Đáp án đúng cho câu 1
+    checkAnswer(2, 'B');  // Đáp án đúng cho câu 2
+    checkAnswer(3, 'A');  // Đáp án đúng cho câu 3
+});
