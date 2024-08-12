@@ -3,33 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tiêu đề nên để là j dmm</title>
+    <title>Kỷ Niệm Đặc Biệt</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>tiêu đề nên để là j dmm!</h1>
+    <h1>Kỷ Niệm Đặc Biệt!</h1>
     <div id="question1" class="question slide-in">
-        <p>Câu hỏi 1: Lần đầu chúng ta được nói chuyện là qua ai?</p>
-        <button onclick="checkAnswer(1, 'a')">A. Qua hiếu chó</button>
-        <button onclick="checkAnswer(1, 'b')">B. Qua minh anh</button>
-        <button onclick="checkAnswer(1, 'c')">C. Qua đạt</button>
+        <p>Câu hỏi 1: Lần đầu chúng ta nói chuyện là qua ai?</p>
+        <button onclick="checkAnswer(1, 'C')">A. Qua Hiếu</button>
+        <button onclick="checkAnswer(1, 'B')">B. Qua Minh Anh</button>
+        <button onclick="checkAnswer(1, 'C')">C. Qua Đạt</button>
     </div>
-    <div id="question2" class="question">
-        <p>Câu hỏi 2: Anh đã tò tỉnh với em ở đâu?</p>
-        <button onclick="checkAnswer(2, 'a')">A. Qua mạng</button>
-        <button onclick="checkAnswer(2, 'b')">B. Hồ con vịt</button>
-        <button onclick="checkAnswer(2, 'c')">C. Mixue</button>
+    <div id="question2" class="question" style="display: none;">
+        <p>Câu hỏi 2: Anh đã tỏ tình với em ở đâu?</p>
+        <button onclick="checkAnswer(2, 'B')">A. Qua mạng</button>
+        <button onclick="checkAnswer(2, 'B')">B. Hồ Con Vịt</button>
+        <button onclick="checkAnswer(2, 'C')">C. Mixue</button>
     </div>
-    <div id="question3" class="question">
-        <p>Câu hỏi 3: Bộ phim mà chúng ta đã xem đầu tiên cùng nhau là gì?</p>
-        <button onclick="checkAnswer(3, 'a')">A. Conan</button>
-        <button onclick="checkAnswer(3, 'b')">B. Ma da</button>
-        <button onclick="checkAnswer(3, 'c')">C. Doraemon</button>
+    <div id="question3" class="question" style="display: none;">
+        <p>Câu hỏi 3: Bộ phim đầu tiên chúng ta xem cùng nhau là gì?</p>
+        <button onclick="checkAnswer(3, 'A')">A. Conan</button>
+        <button onclick="checkAnswer(3, 'B')">B. Ma Da</button>
+        <button onclick="checkAnswer(3, 'C')">C. Doraemon</button>
     </div>
-    <div id="message">
-        <p>nhanh nhỉ vậy là chúng ta đã ở bên nhau 1 tháng r đó,anh không biết phải nói như nào với em nữa, anh cảm thấy bây h a đang rất vui vì trong 1 tháng qua người ở bên động viên anh chỉ có em, anh mong sau này người con ở bên anh vẫn là em.!!!!!</p>
+    <div id="message" style="display: none;">
+        <p>Nhanh thật, vậy là chúng ta đã ở bên nhau 1 tháng rồi. Anh rất vui vì trong 1 tháng qua, người luôn ở bên động viên anh chỉ có em. Anh mong rằng sau này, người ở bên anh vẫn sẽ là em.</p>
         <div id="image">
-            <img src="a.png" alt="Hình ảnh của chúng ta">
+            <img src="a.png" alt="Hình ảnh 1">
+            <img src="b.png" alt="Hình ảnh 2">
+            <img src="c.png" alt="Hình ảnh 3">
         </div>
     </div>
     <script src="script.js"></script>
